@@ -60,7 +60,16 @@ class DebugUI extends Sprite {
 	private var lpInitial:Point;
 	private var rpInitial:Point;
 	
-	#if windows or linux
+	#if linux
+	private var aButton:Bitmap;
+	private var bButton:Bitmap;
+	private var xButton:Bitmap;
+	private var yButton:Bitmap;
+	private var start:Bitmap;
+	private var back:Bitmap;
+	#end
+	
+	#if windows
 	private var aButton:Bitmap;
 	private var bButton:Bitmap;
 	private var xButton:Bitmap;
@@ -169,7 +178,16 @@ class DebugUI extends Sprite {
 		addChild(lp);
 		addChild(rp);
 		
-		#if windows or linux
+		#if linux
+		aButton = new Bitmap(new AImage(0, 0));
+		bButton = new Bitmap(new BImage(0, 0));
+		xButton = new Bitmap(new XImage(0, 0));
+		yButton = new Bitmap(new YImage(0, 0));
+		start = new Bitmap(new StartImage(0, 0));
+		back = new Bitmap(new BackImage(0, 0));
+		#end
+		
+		#if windows
 		aButton = new Bitmap(new AImage(0, 0));
 		bButton = new Bitmap(new BImage(0, 0));
 		xButton = new Bitmap(new XImage(0, 0));
@@ -254,7 +272,7 @@ class DebugUI extends Sprite {
 		right.x = up.x;
 		right.y = up.y;
 		
-		#if windows or linux
+		#if linux 
 		addChild(aButton);
 		addChild(bButton);
 		addChild(xButton);
@@ -262,6 +280,17 @@ class DebugUI extends Sprite {
 		addChild(back);
 		addChild(start);
 		#end
+		
+		#if windows
+		addChild(aButton);
+		addChild(bButton);
+		addChild(xButton);
+		addChild(yButton);
+		addChild(back);
+		addChild(start);
+		#end
+		
+		
 		#if android 
 		addChild(oButton);
 		addChild(uButton);
@@ -273,6 +302,7 @@ class DebugUI extends Sprite {
 		
 		addChild(lb);
 		addChild(rb);
+		
 		addChild(up);
 		addChild(down);
 		addChild(left);
@@ -318,7 +348,16 @@ class DebugUI extends Sprite {
 		rb.visible = false;
 		lb.visible = false;
 		
-		#if windows or linux
+		#if linux 
+		back.visible = false;
+		aButton.visible = false;
+		bButton.visible = false;
+		xButton.visible = false;
+		yButton.visible = false;
+		start.visible = false;
+		#end
+		
+		#if windows
 		back.visible = false;
 		aButton.visible = false;
 		bButton.visible = false;
@@ -431,7 +470,16 @@ class DebugUI extends Sprite {
 		lp.visible = lo.visible = lym != 0 || lxm != 0;
 		rp.visible = ro.visible = rym != 0 || rxm != 0;
 		
-		#if windows or linux
+		#if linux 
+		bButton.visible = controller.b;
+		aButton.visible = controller.a;
+		xButton.visible = controller.x;
+		yButton.visible = controller.y;
+		start.visible = controller.start;
+		back.visible = controller.back;
+		#end
+		
+		#if windows
 		bButton.visible = controller.b;
 		aButton.visible = controller.a;
 		xButton.visible = controller.x;
