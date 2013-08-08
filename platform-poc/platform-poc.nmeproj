@@ -78,10 +78,6 @@
     <Compile Include="Source\Main.hx" />
     <Compile Include="Source\hxculture\Culture.hx" />
     <Compile Include="Source\hxculture\Format.hx" />
-    <Compile Include="Source\br\com\wolfteam\pocs\platformpoc\debug\DebugUI.hx" />
-    <Compile Include="Source\br\com\wolfteam\pocs\platformpoc\Controller.hx" />
-    <Compile Include="Source\br\com\wolfteam\pocs\platformpoc\ControllerService.hx" />
-    <Compile Include="Source\br\com\wolfteam\pocs\platformpoc\GameService.hx" />
     <Compile Include="Source\hxculture\core\DateTimeInfo.hx" />
     <Compile Include="Source\hxculture\core\NumberInfo.hx" />
     <Compile Include="Source\hxculture\cultures\AfZA.hx" />
@@ -293,8 +289,19 @@
     <Compile Include="project.xml" />
     <Compile Include=".paths" />
     <Compile Include=".project" />
+    <Compile Include="Source\br\com\wolfgames\pocs\platformpoc\debug\DebugUI.hx" />
+    <Compile Include="Source\br\com\wolfgames\pocs\platformpoc\Controller.hx" />
+    <Compile Include="Source\br\com\wolfgames\pocs\platformpoc\ControllerService.hx" />
+    <Compile Include="Source\br\com\wolfgames\pocs\platformpoc\GameService.hx" />
+    <Compile Include="Source\br\com\wolfgames\platform\WindowsPlatform.hx" />
+    <Compile Include="Source\br\com\wolfgames\platform\LinuxPlatform.hx" />
+    <Compile Include="Source\br\com\wolfgames\services\Controller.hx" />
+    <Compile Include="Source\br\com\wolfgames\platform\Platform.hx" />
+    <Compile Include="Source\br\com\wolfgames\platform\OuyaPlatform.hx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
+    <Folder Include="Source\br\com\wolfgames\platform\" />
+    <Folder Include="Source\br\com\wolfgames\services\" />
   </ItemGroup>
 </Project>

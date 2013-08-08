@@ -1,7 +1,7 @@
 
-import br.com.wolfteam.pocs.platformpoc.Controller;
+import br.com.wolfgames.pocs.platformpoc.Controller;
 import flash.display.Sprite;
-import br.com.wolfteam.pocs.platformpoc.debug.DebugUI;
+import br.com.wolfgames.pocs.platformpoc.debug.DebugUI;
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.events.Event;

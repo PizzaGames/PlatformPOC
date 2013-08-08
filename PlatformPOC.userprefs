@@ -1,8 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Android" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="platform-poc/Source/br/com/wolfteam/pocs/platformpoc/debug/DebugUI.hx">
+  <MonoDevelop.Ide.Workbench ActiveDocument="platform-poc/Source/br/com/wolfgames/platform/OuyaPlatform.hx">
     <Files>
-      <File FileName="platform-poc/Source/br/com/wolfteam/pocs/platformpoc/debug/DebugUI.hx" Line="426" Column="68" />
+      <File FileName="platform-poc/Source/br/com/wolfgames/platform/Platform.hx" Line="12" Column="33" />
+      <File FileName="platform-poc/Source/br/com/wolfgames/platform/WindowsPlatform.hx" Line="16" Column="2" />
+      <File FileName="platform-poc/Source/Main.hx" Line="21" Column="1" />
+      <File FileName="platform-poc/Source/br/com/wolfgames/platform/LinuxPlatform.hx" Line="17" Column="51" />
+      <File FileName="platform-poc/Source/br/com/wolfgames/platform/OuyaPlatform.hx" Line="18" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

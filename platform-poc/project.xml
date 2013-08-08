@@ -2,7 +2,7 @@
 <project>
 	
 	<meta title="PlatformPOC" package="br.com.wolfteam.pocs.platformpoc" version="1.0.0" company="Wolf Team" />
-	<app main="Main" path="Export" file="PlatformPOC" />
+	<app main="PlatformPOC" path="Export" file="PlatformPOC" />
 	<window fps="60" />
 	
 	<source path="Source" />
