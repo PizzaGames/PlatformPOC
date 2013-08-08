@@ -1,0 +1,12 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Android" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="platform-poc/Source/br/com/wolfteam/pocs/platformpoc/debug/DebugUI.hx">
+    <Files>
+      <File FileName="platform-poc/Source/br/com/wolfteam/pocs/platformpoc/debug/DebugUI.hx" Line="426" Column="68" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

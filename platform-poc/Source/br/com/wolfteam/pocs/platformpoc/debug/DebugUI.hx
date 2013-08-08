@@ -17,6 +17,14 @@ import haxe.Timer;
 
 @:font("Assets/AutourOne-Regular.ttf") class DefaultFont extends Font { }
 
+#if linux
+@:bitmap("Assets/buttons/a.png") class AImage extends BitmapData { }
+@:bitmap("Assets/buttons/b.png") class BImage extends BitmapData { }
+@:bitmap("Assets/buttons/x.png") class XImage extends BitmapData { }
+@:bitmap("Assets/buttons/y.png") class YImage extends BitmapData { }
+@:bitmap("Assets/buttons/back.png") class BackImage extends BitmapData { }
+#end
+
 #if windows
 @:bitmap("Assets/buttons/a.png") class AImage extends BitmapData { }
 @:bitmap("Assets/buttons/b.png") class BImage extends BitmapData { }
@@ -31,6 +39,7 @@ import haxe.Timer;
 @:bitmap("Assets/buttons/ouyaY.png") class OuyaYImage extends BitmapData { }
 @:bitmap("Assets/buttons/ouyaA.png") class OuyaAImage extends BitmapData { }
 #end
+
 @:bitmap("Assets/buttons/start.png") class StartImage extends BitmapData { }
 @:bitmap("Assets/buttons/lb.png") class LBImage extends BitmapData { }
 @:bitmap("Assets/buttons/rb.png") class RBImage extends BitmapData { }

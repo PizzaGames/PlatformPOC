@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Android</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47B82079-70D5-4F0E-AC9B-D46EB4511640}</ProjectGuid>
+    <TargetNMMLFile>project.nmml</TargetNMMLFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Android' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|BlackBerry' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Flash' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|HTML5' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iOS' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+    <AdditionalArguments>-simulator</AdditionalArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Linux' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Mac' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|webOS' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Windows' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Android' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|BlackBerry' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Flash' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|HTML5' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iOS' ">
+    <OutputPath>.</OutputPath>
+    <AdditionalArguments>-simulator</AdditionalArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Linux' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Mac' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|webOS' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Windows' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Assets\nme.svg" />
+    <Compile Include="Source\Main.hx" />
+    <Compile Include="Source\hxculture\Culture.hx" />
+    <Compile Include="Source\hxculture\Format.hx" />
+    <Compile Include="Source\br\com\wolfteam\pocs\platformpoc\debug\DebugUI.hx" />
+    <Compile Include="Source\br\com\wolfteam\pocs\platformpoc\Controller.hx" />
+    <Compile Include="Source\br\com\wolfteam\pocs\platformpoc\ControllerService.hx" />
+    <Compile Include="Source\br\com\wolfteam\pocs\platformpoc\GameService.hx" />
+    <Compile Include="Source\hxculture\core\DateTimeInfo.hx" />
+    <Compile Include="Source\hxculture\core\NumberInfo.hx" />
+    <Compile Include="Source\hxculture\cultures\AfZA.hx" />
+    <Compile Include="Source\hxculture\cultures\ArAE.hx" />
+    <Compile Include="Source\hxculture\cultures\ArBH.hx" />
+    <Compile Include="Source\hxculture\cultures\ArDZ.hx" />
+    <Compile Include="Source\hxculture\cultures\ArEG.hx" />
+    <Compile Include="Source\hxculture\cultures\ArIQ.hx" />
+    <Compile Include="Source\hxculture\cultures\ArJO.hx" />
+    <Compile Include="Source\hxculture\cultures\ArKW.hx" />
+    <Compile Include="Source\hxculture\cultures\ArLB.hx" />
+    <Compile Include="Source\hxculture\cultures\ArLY.hx" />
+    <Compile Include="Source\hxculture\cultures\ArMA.hx" />
+    <Compile Include="Source\hxculture\cultures\ArOM.hx" />
+    <Compile Include="Source\hxculture\cultures\ArQA.hx" />
+    <Compile Include="Source\hxculture\cultures\ArSA.hx" />
+    <Compile Include="Source\hxculture\cultures\ArSY.hx" />
+    <Compile Include="Source\hxculture\cultures\ArTN.hx" />
+    <Compile Include="Source\hxculture\cultures\ArYE.hx" />
+    <Compile Include="Source\hxculture\cultures\AzCyrlAZ.hx" />
+    <Compile Include="Source\hxculture\cultures\AzLatnAZ.hx" />
+    <Compile Include="Source\hxculture\cultures\BeBY.hx" />
+    <Compile Include="Source\hxculture\cultures\BgBG.hx" />
+    <Compile Include="Source\hxculture\cultures\CaES.hx" />
+    <Compile Include="Source\hxculture\cultures\CsCZ.hx" />
+    <Compile Include="Source\hxculture\cultures\DaDK.hx" />
+    <Compile Include="Source\hxculture\cultures\DeAT.hx" />
+    <Compile Include="Source\hxculture\cultures\DeCH.hx" />
+    <Compile Include="Source\hxculture\cultures\DeDE.hx" />
+    <Compile Include="Source\hxculture\cultures\DeLI.hx" />
+    <Compile Include="Source\hxculture\cultures\DeLU.hx" />
+    <Compile Include="Source\hxculture\cultures\DvMV.hx" />
+    <Compile Include="Source\hxculture\cultures\ElGR.hx" />
+    <Compile Include="Source\hxculture\cultures\EnAU.hx" />
+    <Compile Include="Source\hxculture\cultures\EnBZ.hx" />
+    <Compile Include="Source\hxculture\cultures\EnCA.hx" />
+    <Compile Include="Source\hxculture\cultures\EnGB.hx" />
+    <Compile Include="Source\hxculture\cultures\EnIE.hx" />
+    <Compile Include="Source\hxculture\cultures\EnJM.hx" />
+    <Compile Include="Source\hxculture\cultures\EnNZ.hx" />
+    <Compile Include="Source\hxculture\cultures\EnPH.hx" />
+    <Compile Include="Source\hxculture\cultures\EnTT.hx" />
+    <Compile Include="Source\hxculture\cultures\EnUS.hx" />
+    <Compile Include="Source\hxculture\cultures\EnZA.hx" />
+    <Compile Include="Source\hxculture\cultures\EnZW.hx" />
+    <Compile Include="Source\hxculture\cultures\EsAR.hx" />
+    <Compile Include="Source\hxculture\cultures\EsBO.hx" />
+    <Compile Include="Source\hxculture\cultures\EsCL.hx" />
+    <Compile Include="Source\hxculture\cultures\EsCO.hx" />
+    <Compile Include="Source\hxculture\cultures\EsCR.hx" />
+    <Compile Include="Source\hxculture\cultures\EsDO.hx" />
+    <Compile Include="Source\hxculture\cultures\EsEC.hx" />
+    <Compile Include="Source\hxculture\cultures\EsES.hx" />
+    <Compile Include="Source\hxculture\cultures\EsGT.hx" />
+    <Compile Include="Source\hxculture\cultures\EsHN.hx" />
+    <Compile Include="Source\hxculture\cultures\EsMX.hx" />
+    <Compile Include="Source\hxculture\cultures\EsNI.hx" />
+    <Compile Include="Source\hxculture\cultures\EsPA.hx" />
+    <Compile Include="Source\hxculture\cultures\EsPE.hx" />
+    <Compile Include="Source\hxculture\cultures\EsPR.hx" />
+    <Compile Include="Source\hxculture\cultures\EsPY.hx" />
+    <Compile Include="Source\hxculture\cultures\EsSV.hx" />
+    <Compile Include="Source\hxculture\cultures\EsUY.hx" />
+    <Compile Include="Source\hxculture\cultures\EsVE.hx" />
+    <Compile Include="Source\hxculture\cultures\EtEE.hx" />
+    <Compile Include="Source\hxculture\cultures\EuES.hx" />
+    <Compile Include="Source\hxculture\cultures\FaIR.hx" />
+    <Compile Include="Source\hxculture\cultures\FiFI.hx" />
+    <Compile Include="Source\hxculture\cultures\FoFO.hx" />
+    <Compile Include="Source\hxculture\cultures\FrBE.hx" />
+    <Compile Include="Source\hxculture\cultures\FrCA.hx" />
+    <Compile Include="Source\hxculture\cultures\FrCH.hx" />
+    <Compile Include="Source\hxculture\cultures\FrFR.hx" />
+    <Compile Include="Source\hxculture\cultures\FrLU.hx" />
+    <Compile Include="Source\hxculture\cultures\FrMC.hx" />
+    <Compile Include="Source\hxculture\cultures\GlES.hx" />
+    <Compile Include="Source\hxculture\cultures\GuIN.hx" />
+    <Compile Include="Source\hxculture\cultures\HeIL.hx" />
+    <Compile Include="Source\hxculture\cultures\HiIN.hx" />
+    <Compile Include="Source\hxculture\cultures\HrHR.hx" />
+    <Compile Include="Source\hxculture\cultures\HuHU.hx" />
+    <Compile Include="Source\hxculture\cultures\HyAM.hx" />
+    <Compile Include="Source\hxculture\cultures\IdID.hx" />
+    <Compile Include="Source\hxculture\cultures\ImportAll.hx" />
+    <Compile Include="Source\hxculture\cultures\IsIS.hx" />
+    <Compile Include="Source\hxculture\cultures\ItCH.hx" />
+    <Compile Include="Source\hxculture\cultures\ItIT.hx" />
+    <Compile Include="Source\hxculture\cultures\JaJP.hx" />
+    <Compile Include="Source\hxculture\cultures\KaGE.hx" />
+    <Compile Include="Source\hxculture\cultures\KkKZ.hx" />
+    <Compile Include="Source\hxculture\cultures\KnIN.hx" />
+    <Compile Include="Source\hxculture\cultures\KoKR.hx" />
+    <Compile Include="Source\hxculture\cultures\KyKG.hx" />
+    <Compile Include="Source\hxculture\cultures\LtLT.hx" />
+    <Compile Include="Source\hxculture\cultures\LvLV.hx" />
+    <Compile Include="Source\hxculture\cultures\MkMK.hx" />
+    <Compile Include="Source\hxculture\cultures\MnMN.hx" />
+    <Compile Include="Source\hxculture\cultures\MrIN.hx" />
+    <Compile Include="Source\hxculture\cultures\MsBN.hx" />
+    <Compile Include="Source\hxculture\cultures\MsMY.hx" />
+    <Compile Include="Source\hxculture\cultures\NbNO.hx" />
+    <Compile Include="Source\hxculture\cultures\NlBE.hx" />
+    <Compile Include="Source\hxculture\cultures\NlNL.hx" />
+    <Compile Include="Source\hxculture\cultures\NnNO.hx" />
+    <Compile Include="Source\hxculture\cultures\PaIN.hx" />
+    <Compile Include="Source\hxculture\cultures\PlPL.hx" />
+    <Compile Include="Source\hxculture\cultures\PtBR.hx" />
+    <Compile Include="Source\hxculture\cultures\PtPT.hx" />
+    <Compile Include="Source\hxculture\cultures\RoRO.hx" />
+    <Compile Include="Source\hxculture\cultures\RuRU.hx" />
+    <Compile Include="Source\hxculture\cultures\SaIN.hx" />
+    <Compile Include="Source\hxculture\cultures\SkSK.hx" />
+    <Compile Include="Source\hxculture\cultures\SlSI.hx" />
+    <Compile Include="Source\hxculture\cultures\SqAL.hx" />
+    <Compile Include="Source\hxculture\cultures\SrCyrlCS.hx" />
+    <Compile Include="Source\hxculture\cultures\SrLatnCS.hx" />
+    <Compile Include="Source\hxculture\cultures\SvFI.hx" />
+    <Compile Include="Source\hxculture\cultures\SvSE.hx" />
+    <Compile Include="Source\hxculture\cultures\SwKE.hx" />
+    <Compile Include="Source\hxculture\cultures\TaIN.hx" />
+    <Compile Include="Source\hxculture\cultures\TeIN.hx" />
+    <Compile Include="Source\hxculture\cultures\ThTH.hx" />
+    <Compile Include="Source\hxculture\cultures\TrTR.hx" />
+    <Compile Include="Source\hxculture\cultures\TtRU.hx" />
+    <Compile Include="Source\hxculture\cultures\UkUA.hx" />
+    <Compile Include="Source\hxculture\cultures\UrPK.hx" />
+    <Compile Include="Source\hxculture\cultures\UzCyrlUZ.hx" />
+    <Compile Include="Source\hxculture\cultures\UzLatnUZ.hx" />
+    <Compile Include="Source\hxculture\cultures\ViVN.hx" />
+    <Compile Include="Source\hxculture\cultures\ZhCN.hx" />
+    <Compile Include="Source\hxculture\cultures\ZhHK.hx" />
+    <Compile Include="Source\hxculture\cultures\ZhMO.hx" />
+    <Compile Include="Source\hxculture\cultures\ZhSG.hx" />
+    <Compile Include="Source\hxculture\cultures\ZhTW.hx" />
+    <Compile Include="Source\hxculture\languages\Af.hx" />
+    <Compile Include="Source\hxculture\languages\Ar.hx" />
+    <Compile Include="Source\hxculture\languages\Az.hx" />
+    <Compile Include="Source\hxculture\languages\Be.hx" />
+    <Compile Include="Source\hxculture\languages\Bg.hx" />
+    <Compile Include="Source\hxculture\languages\Ca.hx" />
+    <Compile Include="Source\hxculture\languages\Cs.hx" />
+    <Compile Include="Source\hxculture\languages\Da.hx" />
+    <Compile Include="Source\hxculture\languages\De.hx" />
+    <Compile Include="Source\hxculture\languages\Dv.hx" />
+    <Compile Include="Source\hxculture\languages\El.hx" />
+    <Compile Include="Source\hxculture\languages\En.hx" />
+    <Compile Include="Source\hxculture\languages\Es.hx" />
+    <Compile Include="Source\hxculture\languages\Et.hx" />
+    <Compile Include="Source\hxculture\languages\Eu.hx" />
+    <Compile Include="Source\hxculture\languages\Fa.hx" />
+    <Compile Include="Source\hxculture\languages\Fi.hx" />
+    <Compile Include="Source\hxculture\languages\Fo.hx" />
+    <Compile Include="Source\hxculture\languages\Fr.hx" />
+    <Compile Include="Source\hxculture\languages\Gl.hx" />
+    <Compile Include="Source\hxculture\languages\Gu.hx" />
+    <Compile Include="Source\hxculture\languages\He.hx" />
+    <Compile Include="Source\hxculture\languages\Hi.hx" />
+    <Compile Include="Source\hxculture\languages\Hr.hx" />
+    <Compile Include="Source\hxculture\languages\Hu.hx" />
+    <Compile Include="Source\hxculture\languages\Hy.hx" />
+    <Compile Include="Source\hxculture\languages\Id.hx" />
+    <Compile Include="Source\hxculture\languages\ImportAll.hx" />
+    <Compile Include="Source\hxculture\languages\Is.hx" />
+    <Compile Include="Source\hxculture\languages\It.hx" />
+    <Compile Include="Source\hxculture\languages\Ja.hx" />
+    <Compile Include="Source\hxculture\languages\Ka.hx" />
+    <Compile Include="Source\hxculture\languages\Kk.hx" />
+    <Compile Include="Source\hxculture\languages\Kn.hx" />
+    <Compile Include="Source\hxculture\languages\Ko.hx" />
+    <Compile Include="Source\hxculture\languages\Kok.hx" />
+    <Compile Include="Source\hxculture\languages\Ky.hx" />
+    <Compile Include="Source\hxculture\languages\Lt.hx" />
+    <Compile Include="Source\hxculture\languages\Lv.hx" />
+    <Compile Include="Source\hxculture\languages\Mk.hx" />
+    <Compile Include="Source\hxculture\languages\Mn.hx" />
+    <Compile Include="Source\hxculture\languages\Mr.hx" />
+    <Compile Include="Source\hxculture\languages\Ms.hx" />
+    <Compile Include="Source\hxculture\languages\Nl.hx" />
+    <Compile Include="Source\hxculture\languages\No.hx" />
+    <Compile Include="Source\hxculture\languages\Pa.hx" />
+    <Compile Include="Source\hxculture\languages\Pl.hx" />
+    <Compile Include="Source\hxculture\languages\Pt.hx" />
+    <Compile Include="Source\hxculture\languages\Ro.hx" />
+    <Compile Include="Source\hxculture\languages\Ru.hx" />
+    <Compile Include="Source\hxculture\languages\Sa.hx" />
+    <Compile Include="Source\hxculture\languages\Sk.hx" />
+    <Compile Include="Source\hxculture\languages\Sl.hx" />
+    <Compile Include="Source\hxculture\languages\Sq.hx" />
+    <Compile Include="Source\hxculture\languages\Sr.hx" />
+    <Compile Include="Source\hxculture\languages\Sv.hx" />
+    <Compile Include="Source\hxculture\languages\Sw.hx" />
+    <Compile Include="Source\hxculture\languages\Syr.hx" />
+    <Compile Include="Source\hxculture\languages\Ta.hx" />
+    <Compile Include="Source\hxculture\languages\Te.hx" />
+    <Compile Include="Source\hxculture\languages\Th.hx" />
+    <Compile Include="Source\hxculture\languages\Tr.hx" />
+    <Compile Include="Source\hxculture\languages\Tt.hx" />
+    <Compile Include="Source\hxculture\languages\Uk.hx" />
+    <Compile Include="Source\hxculture\languages\Ur.hx" />
+    <Compile Include="Source\hxculture\languages\Uz.hx" />
+    <Compile Include="Source\hxculture\languages\Vi.hx" />
+    <Compile Include="Source\hxculture\languages\ZhHans.hx" />
+    <Compile Include="Source\hxculture\languages\ZhHant.hx" />
+    <Compile Include="Source\hxculture\FormatDate.hx" />
+    <Compile Include="Source\hxculture\FormatNumber.hx" />
+    <Compile Include="Source\hxculture\Language.hx" />
+    <Compile Include="Source\PlatformPOC.hx" />
+    <Compile Include="PlatformPOC.hxproj" />
+    <Compile Include="project.xml" />
+    <Compile Include=".paths" />
+    <Compile Include=".project" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+</Project>
