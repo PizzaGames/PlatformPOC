@@ -12,10 +12,16 @@
 	<haxelib name="openfl-ouya" if="android" />
 	<haxelib name="openfl-xinput" if="windows" />
 	<haxelib name="swf" />
+	<haxelib name="tilelayer" />
 	
 	<library path="Source/library.swf" />
 	
-	<assets path="Assets" rename="assets" exclude="nme.svg" />
+	<ndll name="std" />
+	<ndll name="regexp" />
+	<ndll name="zlib" />
+	
+	
+	<assets path="Assets" rename="Assets" exclude="nme.svg" include="*" />
 	<icon path="Assets/nme.svg" />
 	
 </project>
