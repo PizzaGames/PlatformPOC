@@ -1,19 +1,34 @@
 package br.com.wolfgames.platform;
+import br.com.wolfgames.input.Controller;
+import flash.display.Stage;
 
 /**
- * ...
+ * Linux platform specific things
  * @author Marcelo Frau
  */
 class LinuxPlatform extends Platform {
 	
-	public function new() {
-		super();	
+	public function new(stage:Stage) {
+		super(stage);	
 	}	
 	
-	public override function prepareEnviroment() {
+	override public function prepareEnviroment():Void {
+		
+	}
 	
-	}	
+	override public function getPlatformName():String {
+		return "Linux";
+	}
 	
-	public override var platformName: String = "Linux";
+	override public function getController(playerNumber:Int):Controller {
+		var controller = controllers[playerNumber];
+		
+		if (controller == null) {
+			controller = new Controller(playerNumber, null); //TODO implement controller support on linux
+			controllers[playerNumber] = controller;
+		}
+		
+		return controller;
+	}
 
 }

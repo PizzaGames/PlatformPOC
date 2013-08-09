@@ -5,7 +5,7 @@
     <movie outputType="Application" />
     <movie input="" />
     <movie path="project.xml" />
-    <movie fps="30" />
+    <movie fps="60" />
     <movie width="800" />
     <movie height="600" />
     <movie version="3" />
@@ -17,9 +17,6 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="Source" />
-    <class path="C:\HaxeToolkit\haxe/lib\openfl/1,0,4/" />
-    <class path="C:\HaxeToolkit\haxe/lib\openfl-ouya/1,0,2/" />
-    <class path="C:\HaxeToolkit\haxe/lib\openfl-xinput/1,1,0/" />
     <class path="Export/flash/haxe" />
   </classpaths>
   <!-- Build options -->

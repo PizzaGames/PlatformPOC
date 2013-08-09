@@ -69,16 +69,8 @@ class DebugUI extends Sprite {
 	private var lpInitial:Point;
 	private var rpInitial:Point;
 	
-	#if linux
-	private var aButton:Bitmap;
-	private var bButton:Bitmap;
-	private var xButton:Bitmap;
-	private var yButton:Bitmap;
-	private var start:Bitmap;
-	private var back:Bitmap;
-	#end
 	
-	#if windows
+	#if (windows || linux)
 	private var aButton:Bitmap;
 	private var bButton:Bitmap;
 	private var xButton:Bitmap;

@@ -8,7 +8,7 @@
 	<source path="Source" />
 	
 	<haxelib name="openfl" />
-	<haxelib name="openfl-ouya" />
+	<haxelib name="openfl-ouya"  />
 	<haxelib name="openfl-xinput" if="windows" />
 	<haxelib name="swf" />
 	
