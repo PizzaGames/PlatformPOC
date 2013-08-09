@@ -21,11 +21,11 @@ class LinuxPlatform extends Platform {
 	}
 	
 	override public function getController(playerNumber:Int):Controller {
-		var controller = controllers[playerNumber];
+		var controller = controllers[playerNumber - 1];
 		
 		if (controller == null) {
 			controller = new Controller(playerNumber, null); //TODO implement controller support on linux
-			controllers[playerNumber] = controller;
+			controllers[playerNumber - 1] = controller;
 		}
 		
 		return controller;

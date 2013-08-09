@@ -3,12 +3,13 @@
 	
 	<meta title="PlatformPOC" package="br.com.wolfteam.pocs.platformpoc" version="1.0.0" company="Wolf Team" />
 	<app main="PlatformPOC" path="Export" file="PlatformPOC" />
-	<window fps="60" />
+	<window fps="60" if="android" />
+	<window fps="60" resizable="false" fullscreen="false" width="1280" height="700" unless="android" />
 	
 	<source path="Source" />
 	
 	<haxelib name="openfl" />
-	<haxelib name="openfl-ouya"  />
+	<haxelib name="openfl-ouya" if="android" />
 	<haxelib name="openfl-xinput" if="windows" />
 	<haxelib name="swf" />
 	

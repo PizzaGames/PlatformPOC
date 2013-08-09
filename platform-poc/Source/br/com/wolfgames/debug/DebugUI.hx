@@ -1,6 +1,7 @@
 ﻿package br.com.wolfgames.debug;
 
 import br.com.wolfgames.input.Controller;
+import br.com.wolfgames.platform.Platform;
 import flash.display.Sprite;
 import flash.display.Stage;
 import flash.geom.Point;
@@ -93,11 +94,14 @@ class DebugUI extends Sprite {
 	
 	private var ticks:Int;
 	private var tickstart:Float;
+	
+	private var platform:Platform;
 
 	public function new(mainStage:Stage) {
 		super();
 		
 		culture = EnUS.culture;
+		platform = Platform.getInstance(stage);
 		
 		// Registering font
 		Font.registerFont(DefaultFont);
@@ -168,14 +172,31 @@ class DebugUI extends Sprite {
 		addChild(lp);
 		addChild(rp);
 		
-		#if (windows || linux)
+		#if (windows || linux) 
 		aButton = new Bitmap(new AImage(0, 0));
 		bButton = new Bitmap(new BImage(0, 0));
 		xButton = new Bitmap(new XImage(0, 0));
 		yButton = new Bitmap(new YImage(0, 0));
 		start = new Bitmap(new StartImage(0, 0));
 		back = new Bitmap(new BackImage(0, 0));
+		#end
 		
+		#if android
+		oButton = new Bitmap(new OuyaOImage(0, 0));
+		uButton = new Bitmap(new OuyaUImage(0, 0));
+		yButton = new Bitmap(new OuyaYImage(0, 0));
+		aButton = new Bitmap(new OuyaAImage(0, 0));
+		start = new Bitmap(new StartImage(0, 0));
+		#end
+		
+		lb = new Bitmap(new LBImage(0, 0));
+		rb = new Bitmap(new RBImage(0, 0));
+		up = new Bitmap(new UpImage(0, 0));
+		down = new Bitmap(new DownImage(0, 0));
+		left = new Bitmap(new LeftImage(0, 0));
+		right = new Bitmap(new RightImage(0, 0));
+		
+		#if (windows || linux) 
 		yButton.y = lo.y + 15;
 		yButton.x = ro.x - yButton.width - (aButton.width / 2) - 30; 
 		
@@ -199,16 +220,9 @@ class DebugUI extends Sprite {
 		
 		back.x = start.x - back.width - 5;
 		back.y = start.y;
-		
 		#end
 		
-		#if android
-		oButton = new Bitmap(new OuyaOImage(0, 0));
-		uButton = new Bitmap(new OuyaUImage(0, 0));
-		yButton = new Bitmap(new OuyaYImage(0, 0));
-		aButton = new Bitmap(new OuyaAImage(0, 0));
-		start = new Bitmap(new StartImage(0, 0));
-		
+		#if android 
 		yButton.y = lo.y + 15;
 		yButton.x = ro.x - yButton.width - (aButton.width / 2) - 30; 
 		
@@ -243,15 +257,7 @@ class DebugUI extends Sprite {
 		right.x = up.x;
 		right.y = up.y;
 		
-		lb = new Bitmap(new LBImage(0, 0));
-		rb = new Bitmap(new RBImage(0, 0));
-		up = new Bitmap(new UpImage(0, 0));
-		down = new Bitmap(new DownImage(0, 0));
-		left = new Bitmap(new LeftImage(0, 0));
-		right = new Bitmap(new RightImage(0, 0));
-		
-		
-		#if (windows || linux)
+		#if (windows || linux) 
 		addChild(aButton);
 		addChild(bButton);
 		addChild(xButton);
@@ -267,6 +273,7 @@ class DebugUI extends Sprite {
 		addChild(aButton);
 		addChild(start);
 		#end
+		
 		
 		addChild(lb);
 		addChild(rb);
@@ -316,7 +323,7 @@ class DebugUI extends Sprite {
 		rb.visible = false;
 		lb.visible = false;
 		
-		#if (windows || linux)
+		#if (windows || linux) 
 		back.visible = false;
 		aButton.visible = false;
 		bButton.visible = false;
@@ -332,7 +339,6 @@ class DebugUI extends Sprite {
 		aButton.visible = false;
 		start.visible = false;
 		#end
-		
 		los.visible = false;
 		ros.visible = false;
 		lo.visible = false;
@@ -343,10 +349,8 @@ class DebugUI extends Sprite {
 		leftTriggerSelected.visible = false;
 		rightTriggerSelected.visible = false;
 		
-		
 		ticks = 0;
 		tickstart = Timer.stamp();
-		
 	}
 	
 	private function buildTextField(format:TextFormat, x:Int, y:Int, width:Int) {
@@ -392,7 +396,6 @@ class DebugUI extends Sprite {
 			" RT: " + FormatNumber.decimal(controller.rt, culture) + 
 			" LT: " + FormatNumber.decimal(controller.lt, culture)
 		);
-		
 		
 		var ltm = controller.lt;
 		var rtm = controller.rt;
@@ -464,6 +467,18 @@ class DebugUI extends Sprite {
 	public function updateFPS() {
 		ticks++;
 		fpsText.text = "FPS: " + Std.int(ticks / (Timer.stamp() - tickstart));
+	}
+	
+	public function update() {
+		updateFPS();
+		if (platform.controllers.length == 0) {
+			var controller = platform.getController(1);
+			updateControllerInfo(controller);
+		} else {
+			
+			var controller = platform.controllers[0];
+			updateControllerInfo(controller);
+		}
 	}
 	
 	public function setDebugMessage(s:String) {

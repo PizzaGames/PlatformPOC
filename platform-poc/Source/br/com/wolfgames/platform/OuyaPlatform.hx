@@ -20,13 +20,13 @@ class OuyaPlatform extends Platform {
 	}
 	
 	override public function getController(playerNumber:Int):Controller {
-		var controller = controllers[playerNumber];
+		var controller = controllers[playerNumber - 1];
 		if (controller == null) {
 			var c = new OuyaWrapperController(playerNumber, getNativeController(playerNumber));
 			c.bindListeners(mainStage);
 			
 			controller = c;
-			controllers[playerNumber] = controller;
+			controllers[playerNumber - 1] = controller;
 		}
 		
 		return controller;

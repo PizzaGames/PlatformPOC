@@ -47,7 +47,6 @@ class OuyaWrapperController extends Controller {
 	}
 	private function onJoystickAxisMove(e:JoystickEvent):Void {
 		var axis:Array<Float> = e.axis;
-		trace(axis);
 		lx = axis[0];
 		ly = -axis[1];
 		

@@ -17,7 +17,7 @@ class WindowsPlatform extends Platform {
 	}		
 	
 	override public function getController(playerNumber:Int):Controller {
-		var controller = controllers[playerNumber];
+		var controller = controllers[playerNumber - 1];
 		
 		if (controller == null) {
 			var nativeController = getNativeController(playerNumber);
@@ -33,7 +33,7 @@ class WindowsPlatform extends Platform {
 			} else {
 				controller = new WindowsController(playerNumber, nativeController); 
 			}
-			controllers[playerNumber] = controller;
+			controllers[playerNumber - 1] = controller;
 		}
 		
 		return controller;

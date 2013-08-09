@@ -43,6 +43,7 @@ class Controller {
 	}
 	
 	public function poll():Void {
+		//trace("Polling controller: ", a, b, x, y, lb, rb, l3, r3, start, back, up, down, left, right, lx, ly, rx, ry, lt, rt);
 	}
 	
 }

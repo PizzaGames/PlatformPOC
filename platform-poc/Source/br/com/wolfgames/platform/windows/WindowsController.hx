@@ -12,6 +12,7 @@ class WindowsController extends Controller {
 	}
 	
 	override public function poll():Void {
+		super.poll();
 		if (nativeController != null) {
 			var controller:XBox360Controller = nativeController;
 			controller.poll();
