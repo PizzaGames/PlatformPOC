@@ -10,6 +10,7 @@ import haxe.Timer;
 import aze.display.TileGroup;
 import aze.display.TileSprite;
 import aze.display.TileLayer;
+import aze.display.TileClip;
 import aze.display.SparrowTilesheet;
 
 import openfl.Assets;
@@ -56,6 +57,19 @@ class PlatformPOC extends Sprite {
 		var tileSheetMario:SparrowTilesheet = new SparrowTilesheet(Assets.getBitmapData("Assets/sprites/mario.png"), marioSheetData);
 		mario = new TileLayer(tileSheetMario);
 		
+		var marioWalking:TileClip = new TileClip(mario, "mario_walk");
+		marioWalking.x = 200;
+		marioWalking.y = 250;
+		mario.addChild(marioWalking);
+		
+		/*
+		var marioNormal = new TileSprite(mario, "mario_normal");
+		marioNormal.x = 200;
+		marioNormal.y = 250;
+		mario.addChild(marioNormal);
+		*/
+		
+		
 		addEventListener(Event.ENTER_FRAME, onEnterFrame);		
 	}
 	
@@ -65,19 +79,9 @@ class PlatformPOC extends Sprite {
 		
 		debug.update();
 		
-		var marioWalkingSprite = new MarioSprite("Runner");
-		mario.addChild(marioWalkingSprite);
-		
-		marioWalkingSprite.update();
-		var view = mario.view;
-		
-		view.x = 100;
-		view.y = 100;
-		mario.x = 100;
-		mario.y = 100;
-		marioWalkingSprite.y = 100;
-		marioWalkingSprite.x = 100;
 		
 		addChild(mario.view);
+		mario.render();
+		
 	}
 }
