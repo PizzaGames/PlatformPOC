@@ -10,7 +10,7 @@
         <key>autoSDSettings</key>
         <array/>
         <key>allowRotation</key>
-        <false/>
+        <true/>
         <key>quiet</key>
         <false/>
         <key>premultiplyAlpha</key>
@@ -20,9 +20,9 @@
         <key>dpi</key>
         <uint>72</uint>
         <key>dataFormat</key>
-        <string>sparrow</string>
+        <string>xml</string>
         <key>textureFileName</key>
-        <filename>../../../Assets/sprites/objects.png</filename>
+        <filename></filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -40,7 +40,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>0</uint>
+        <uint>2</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -50,13 +50,13 @@
         <key>textureFormat</key>
         <enum type="SettingsBase::TextureFormat">png</enum>
         <key>borderPadding</key>
-        <uint>0</uint>
+        <uint>2</uint>
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2040</int>
+            <int>2048</int>
             <key>height</key>
-            <int>2040</int>
+            <int>2048</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -74,7 +74,7 @@
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
-            <enum type="AlgorithmSettings::SizeConstraints">AnySize</enum>
+            <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
             <key>forceSquared</key>
             <false/>
             <key>forceWordAligned</key>
@@ -99,7 +99,7 @@
             <key>packageName</key>
             <string>Texture</string>
             <key>javaFileName</key>
-            <filename>../../../Assets/sprites/backgrounds.java</filename>
+            <filename>backgrounds.java</filename>
             <key>wrap</key>
             <struct type="AndEngineWrap">
                 <key>s</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>../../../Assets/sprites/objects.xml</filename>
+        <filename></filename>
         <key>multiPack</key>
         <false/>
         <key>mainExtension</key>
@@ -134,7 +134,7 @@
             <key>scale</key>
             <double>1</double>
             <key>scaleMode</key>
-            <enum type="ScaleMode">Smooth</enum>
+            <enum type="ScaleMode">Hq2x</enum>
             <key>innerPadding</key>
             <uint>0</uint>
             <key>extrude</key>
@@ -148,9 +148,8 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../bgs/images/backgrounds_65.png</filename>
-            <filename>floor.png</filename>
-            <filename>floor2.png</filename>
+            <filename>../backgrounds/floor.png</filename>
+            <filename>../backgrounds/floor2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -29,7 +29,11 @@
   </build>
   <!-- haxelib libraries -->
   <haxelib>
+    <library name="openfl-ouya" />
+    <library name="openfl-xinput" />
     <library name="openfl" />
+    <library name="swf" />
+    <library name="tilelayer" />
     <library name="swf" />
   </haxelib>
   <!-- Class files to compile (other referenced classes will automatically be included) -->

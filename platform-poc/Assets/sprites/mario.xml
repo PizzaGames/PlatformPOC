@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:6b91c9104901fa26e01486a68c5a1096:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:2ed32204cca4cb5ec5bf1d3e9b4835ba:1/1$ -->
 <TextureAtlas imagePath="mario.png">
-    <SubTexture name="mario_crouched" x="152" y="68" width="44" height="64"/>
-    <SubTexture name="mario_jumping" x="206" y="66" width="44" height="64"/>
-    <SubTexture name="mario_jumping_fast" x="52" y="2" width="54" height="64"/>
-    <SubTexture name="mario_normal" x="206" y="2" width="44" height="64"/>
-    <SubTexture name="mario_walk1" x="52" y="132" width="50" height="66"/>
-    <SubTexture name="mario_walk2" x="102" y="68" width="50" height="66"/>
-    <SubTexture name="mario_walk3" x="156" y="2" width="50" height="66"/>
-    <SubTexture name="mario_walk4" x="52" y="66" width="50" height="66"/>
-    <SubTexture name="mario_walk5" x="106" y="2" width="50" height="66"/>
-    <SubTexture name="mario_walk6" x="2" y="134" width="50" height="66"/>
-    <SubTexture name="mario_walk7" x="2" y="68" width="50" height="66"/>
-    <SubTexture name="mario_walk8" x="2" y="2" width="50" height="66"/>
+    <SubTexture name="mario_crouched" x="53" y="365" width="44" height="64"/>
+    <SubTexture name="mario_jumping" x="2" y="436" width="44" height="64"/>
+    <SubTexture name="mario_jumping_fast" x="2" y="2" width="54" height="64"/>
+    <SubTexture name="mario_normal" x="2" y="365" width="44" height="64"/>
+    <SubTexture name="mario_run1" x="2" y="292" width="48" height="66"/>
+    <SubTexture name="mario_run2" x="57" y="221" width="48" height="66"/>
+    <SubTexture name="mario_run3" x="169" y="148" width="48" height="66"/>
+    <SubTexture name="mario_run4" x="114" y="148" width="48" height="66"/>
+    <SubTexture name="mario_run5" x="2" y="219" width="48" height="66"/>
+    <SubTexture name="mario_run6" x="59" y="148" width="48" height="66"/>
+    <SubTexture name="mario_walk1" x="173" y="75" width="50" height="66"/>
+    <SubTexture name="mario_walk2" x="116" y="75" width="50" height="66"/>
+    <SubTexture name="mario_walk3" x="2" y="146" width="50" height="66"/>
+    <SubTexture name="mario_walk4" x="59" y="75" width="50" height="66"/>
+    <SubTexture name="mario_walk5" x="177" y="2" width="50" height="66"/>
+    <SubTexture name="mario_walk6" x="120" y="2" width="50" height="66"/>
+    <SubTexture name="mario_walk7" x="2" y="73" width="50" height="66"/>
+    <SubTexture name="mario_walk8" x="63" y="2" width="50" height="66"/>
 </TextureAtlas>

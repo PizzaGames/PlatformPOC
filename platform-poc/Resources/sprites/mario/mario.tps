@@ -40,7 +40,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>0</uint>
+        <uint>7</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -76,7 +76,7 @@
             <key>sizeConstraints</key>
             <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
             <key>forceSquared</key>
-            <true/>
+            <false/>
             <key>forceWordAligned</key>
             <false/>
             <key>maxRects</key>
@@ -152,6 +152,12 @@
             <filename>mario_jumping.png</filename>
             <filename>mario_jumping_fast.png</filename>
             <filename>mario_normal.png</filename>
+            <filename>mario_run1.png</filename>
+            <filename>mario_run2.png</filename>
+            <filename>mario_run3.png</filename>
+            <filename>mario_run4.png</filename>
+            <filename>mario_run5.png</filename>
+            <filename>mario_run6.png</filename>
             <filename>mario_walk1.png</filename>
             <filename>mario_walk2.png</filename>
             <filename>mario_walk3.png</filename>

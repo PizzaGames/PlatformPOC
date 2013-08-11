@@ -22,7 +22,7 @@
         <key>dataFormat</key>
         <string>sparrow</string>
         <key>textureFileName</key>
-        <filename>../../../Assets/sprites/objects.png</filename>
+        <filename>../../../Assets/sprites/backgrounds.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>../../../Assets/sprites/objects.xml</filename>
+        <filename>../../../Assets/sprites/backgrounds.xml</filename>
         <key>multiPack</key>
         <false/>
         <key>mainExtension</key>
@@ -148,9 +148,16 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../bgs/images/backgrounds_65.png</filename>
-            <filename>floor.png</filename>
-            <filename>floor2.png</filename>
+            <filename>clouds.png</filename>
+            <filename>images/sky_01.png</filename>
+            <filename>images/sky_02.png</filename>
+            <filename>images/backgrounds_65.png</filename>
+            <filename>images/backgrounds_59.png</filename>
+            <filename>images/backgrounds_57.png</filename>
+            <filename>images/backgrounds_40.png</filename>
+            <filename>images/backgrounds_49.png</filename>
+            <filename>images/backgrounds_43.png</filename>
+            <filename>images/backgrounds_70.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

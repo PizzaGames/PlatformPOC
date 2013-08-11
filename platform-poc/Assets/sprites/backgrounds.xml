@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:54b92da7de7d01d4ac1fe74556d4b93a:1/1$ -->
+<TextureAtlas imagePath="backgrounds.png">
+    <SubTexture name="backgrounds_40" x="0" y="0" width="511" height="531" frameX="0" frameY="-16" frameWidth="511" frameHeight="547"/>
+    <SubTexture name="backgrounds_43" x="0" y="531" width="511" height="209" frameX="0" frameY="-18" frameWidth="511" frameHeight="227"/>
+    <SubTexture name="backgrounds_49" x="1530" y="586" width="335" height="73" frameX="0" frameY="-6" frameWidth="335" frameHeight="79"/>
+    <SubTexture name="backgrounds_57" x="1021" y="586" width="509" height="203" frameX="0" frameY="-112" frameWidth="509" frameHeight="315"/>
+    <SubTexture name="backgrounds_59" x="511" y="0" width="511" height="495" frameX="0" frameY="-54" frameWidth="511" frameHeight="549"/>
+    <SubTexture name="backgrounds_65" x="1022" y="476" width="511" height="110" frameX="0" frameY="-8" frameWidth="511" frameHeight="118"/>
+    <SubTexture name="backgrounds_70" x="511" y="495" width="510" height="286" frameX="0" frameY="-52" frameWidth="510" frameHeight="338"/>
+    <SubTexture name="clouds" x="1022" y="0" width="512" height="476"/>
+    <SubTexture name="sky_01" x="1534" y="0" width="253" height="198"/>
+    <SubTexture name="sky_02" x="0" y="740" width="253" height="23"/>
+</TextureAtlas>

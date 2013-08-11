@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:b84f8ac68bad7210073d2d9085b9a1f0:1/1$ -->
+<!-- $TexturePacker:SmartUpdate:6d5dd786be170e5fd570f41b56ffb161:1/1$ -->
 <TextureAtlas imagePath="objects.png">
-    <SubTexture name="floor" x="2" y="64" width="272" height="36"/>
-    <SubTexture name="floor2" x="2" y="2" width="272" height="60"/>
+    <SubTexture name="backgrounds_65" x="256" y="0" width="511" height="110" frameX="0" frameY="-8" frameWidth="511" frameHeight="118"/>
+    <SubTexture name="floor" x="767" y="0" width="256" height="32"/>
+    <SubTexture name="floor2" x="0" y="0" width="256" height="128"/>
 </TextureAtlas>

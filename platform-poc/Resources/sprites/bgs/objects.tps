@@ -20,9 +20,9 @@
         <key>dpi</key>
         <uint>72</uint>
         <key>dataFormat</key>
-        <string>xml</string>
+        <string>sparrow</string>
         <key>textureFileName</key>
-        <filename>backgrounds.png</filename>
+        <filename>../../../Assets/sprites/objects.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -40,7 +40,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>2</uint>
+        <uint>0</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -50,13 +50,13 @@
         <key>textureFormat</key>
         <enum type="SettingsBase::TextureFormat">png</enum>
         <key>borderPadding</key>
-        <uint>2</uint>
+        <uint>0</uint>
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2048</int>
+            <int>512</int>
             <key>height</key>
-            <int>2048</int>
+            <int>512</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -99,7 +99,7 @@
             <key>packageName</key>
             <string>Texture</string>
             <key>javaFileName</key>
-            <filename>backgrounds.java</filename>
+            <filename>../backgrounds/backgrounds.java</filename>
             <key>wrap</key>
             <struct type="AndEngineWrap">
                 <key>s</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>backgrounds.xml</filename>
+        <filename>../../../Assets/sprites/objects.xml</filename>
         <key>multiPack</key>
         <false/>
         <key>mainExtension</key>
@@ -134,7 +134,7 @@
             <key>scale</key>
             <double>1</double>
             <key>scaleMode</key>
-            <enum type="ScaleMode">Scale4x</enum>
+            <enum type="ScaleMode">Hq2x</enum>
             <key>innerPadding</key>
             <uint>0</uint>
             <key>extrude</key>
@@ -148,8 +148,8 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>floor2.png</filename>
-            <filename>floor.png</filename>
+            <filename>../backgrounds/floor2.png</filename>
+            <filename>../backgrounds/floor.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
