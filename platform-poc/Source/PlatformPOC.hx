@@ -27,9 +27,10 @@ class PlatformPOC extends Sprite {
 	var stageHeight:Int;
 	
 	var marioSheetData:String;
-	var mario:TileLayer;
+	var marioLayer:TileLayer;
 	
-	var marioSprite:MarioSprite;
+	var objectsSheetData:String;
+	var objectsLayer:TileLayer;
     
     public function new() {
     	super();
@@ -55,13 +56,22 @@ class PlatformPOC extends Sprite {
 		
 		marioSheetData = Assets.getText("Assets/sprites/mario.xml");
 		var tileSheetMario:SparrowTilesheet = new SparrowTilesheet(Assets.getBitmapData("Assets/sprites/mario.png"), marioSheetData);
-		mario = new TileLayer(tileSheetMario);
+		marioLayer = new TileLayer(tileSheetMario);
 		
-		var marioWalking:TileClip = new TileClip(mario, "mario_walk");
+		var marioWalking:TileClip = new TileClip(marioLayer, "mario_walk");
 		marioWalking.x = 200;
 		marioWalking.y = 250;
-		mario.addChild(marioWalking);
+		marioWalking.fps = 10;
+		marioLayer.addChild(marioWalking);
 		
+		objectsSheetData = Assets.getText("Assets/sprites/objects.xml");
+		var objectsSheet:SparrowTilesheet = new SparrowTilesheet(Assets.getBitmapData("Assets/sprites/objects.png"), objectsSheetData);
+		objectsLayer = new TileLayer(objectsSheet);
+		
+		
+		
+		
+		addChild(marioLayer.view);
 		/*
 		var marioNormal = new TileSprite(mario, "mario_normal");
 		marioNormal.x = 200;
@@ -80,8 +90,8 @@ class PlatformPOC extends Sprite {
 		debug.update();
 		
 		
-		addChild(mario.view);
-		mario.render();
+		
+		marioLayer.render();
 		
 	}
 }

@@ -22,7 +22,7 @@
         <key>dataFormat</key>
         <string>sparrow</string>
         <key>textureFileName</key>
-        <filename>../../../Assets/sprites/mario.png</filename>
+        <filename>../../../Assets/sprites/objects.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -40,11 +40,11 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>0</uint>
+        <uint>2</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
-        <uint>7</uint>
+        <uint>0</uint>
         <key>textureSubPath</key>
         <string></string>
         <key>textureFormat</key>
@@ -54,9 +54,9 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>1024</int>
+            <int>512</int>
             <key>height</key>
-            <int>1024</int>
+            <int>512</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -76,7 +76,7 @@
             <key>sizeConstraints</key>
             <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
             <key>forceSquared</key>
-            <true/>
+            <false/>
             <key>forceWordAligned</key>
             <false/>
             <key>maxRects</key>
@@ -99,7 +99,7 @@
             <key>packageName</key>
             <string>Texture</string>
             <key>javaFileName</key>
-            <filename>../../../Assets/sprites/mario.java</filename>
+            <filename>../backgrounds/backgrounds.java</filename>
             <key>wrap</key>
             <struct type="AndEngineWrap">
                 <key>s</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>../../../Assets/sprites/mario.xml</filename>
+        <filename>../../../Assets/sprites/objects.xml</filename>
         <key>multiPack</key>
         <false/>
         <key>mainExtension</key>
@@ -126,7 +126,7 @@
             <string></string>
         </struct>
         <key>autoAliasEnabled</key>
-        <false/>
+        <true/>
         <key>trimSpriteNames</key>
         <false/>
         <key>globalSpriteSettings</key>
@@ -134,7 +134,7 @@
             <key>scale</key>
             <double>1</double>
             <key>scaleMode</key>
-            <enum type="ScaleMode">Hq2x</enum>
+            <enum type="ScaleMode">Scale4x</enum>
             <key>innerPadding</key>
             <uint>0</uint>
             <key>extrude</key>
@@ -142,24 +142,14 @@
             <key>trimThreshold</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">None</enum>
+            <enum type="SpriteSettings::TrimMode">Trim</enum>
             <key>heuristicMask</key>
             <false/>
         </struct>
         <key>fileList</key>
         <array>
-            <filename>mario_crouched.png</filename>
-            <filename>mario_jumping.png</filename>
-            <filename>mario_jumping_fast.png</filename>
-            <filename>mario_normal.png</filename>
-            <filename>mario_walk1.png</filename>
-            <filename>mario_walk2.png</filename>
-            <filename>mario_walk3.png</filename>
-            <filename>mario_walk4.png</filename>
-            <filename>mario_walk5.png</filename>
-            <filename>mario_walk6.png</filename>
-            <filename>mario_walk7.png</filename>
-            <filename>mario_walk8.png</filename>
+            <filename>../backgrounds/floor2.png</filename>
+            <filename>../backgrounds/floor.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
