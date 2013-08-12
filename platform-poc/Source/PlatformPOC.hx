@@ -40,6 +40,9 @@ class PlatformPOC extends Sprite {
 	var marioNormal:TileSprite;
 	var marioWalking:TileClip;
 	var marioRunning:TileClip;
+	var marioCrouched:TileSprite;
+	var marioJumping:TileSprite;
+	var marioJumpingFast:TileSprite;
 	
 	var floorTop:RepeatedTileGroup;
 	var floorBottom :RepeatedTileGroup;
@@ -127,21 +130,37 @@ class PlatformPOC extends Sprite {
 		parallaxBackgrounds.add(getBackground(backgroundsLayer, "backgrounds_57", repeatX, 1, 0, Std.int(floorTop.y - 40)));
 		parallaxBackgrounds.add(getBackground(backgroundsLayer, "backgrounds_43", repeatX, 1, 0, Std.int(floorTop.y + 80)));
 		
+		floorMarioY = floorTop.y - floorTop.height;
 		
 		marioWalking = new TileClip(marioLayer, "mario_walk");
 		marioWalking.x = initialMarioPos;
-		marioWalking.y = floorTop.y - floorTop.height;
+		marioWalking.y = floorMarioY;
 		marioLayer.addChild(marioWalking);
 		
 		marioNormal = new TileSprite(marioLayer, "mario_normal");
 		marioNormal.x = initialMarioPos;
-		marioNormal.y = floorTop.y - floorTop.height;
+		marioNormal.y = floorMarioY;
 		marioLayer.addChild(marioNormal);
 		
 		marioRunning = new TileClip(marioLayer, "mario_run");
 		marioRunning.x = initialMarioPos;
-		marioRunning.y = floorTop.y - floorTop.height;
+		marioRunning.y = floorMarioY;
 		marioLayer.addChild(marioRunning);
+		
+		marioCrouched = new TileSprite(marioLayer, "mario_crouched");
+		marioCrouched.x = initialMarioPos;
+		marioCrouched.y = floorMarioY;
+		marioLayer.addChild(marioCrouched);
+		
+		marioJumping = new TileSprite(marioLayer, "mario_jumping");
+		marioJumping.x = initialMarioPos;
+		marioJumping.y = floorMarioY;
+		marioLayer.addChild(marioJumping);
+		
+		marioJumpingFast = new TileSprite(marioLayer, "mario_jumping_fast");
+		marioJumpingFast.x = initialMarioPos;
+		marioJumpingFast.y = floorMarioY;
+		marioLayer.addChild(marioJumpingFast);
 		
 		debug = new DebugUI(stage);
 		addChild(debug);
@@ -149,37 +168,53 @@ class PlatformPOC extends Sprite {
 		addEventListener(Event.ENTER_FRAME, onEnterFrame);		
 	}
 	
+	var floorMarioY:Float;
+	
 	private function onEnterFrame(event:Event):Void {
 		var controller = platform.getController(1);
 		controller.poll();
 		
 		debug.update();
 		
-		var run = 10;
-		var walk = 5;
+		var run = 6;
+		var walk = 4;
 		var marioSpeed = (controller.x ? run : walk); 
 		var center = stage.stageWidth / 2; 
-		var movement = controller.lx; 
+		
+		var crouching = controller.down || controller.ly == -1;
+		var movement = (crouching) ? 0 : controller.lx; 
 		
 		var mario;
-		if (movement == 0) {
-			marioNormal.visible = true;
+		if (crouching) {
+			marioNormal.visible = false;
 			marioWalking.visible = false;
 			marioRunning.visible = false;
-			mario = marioNormal;
+			marioJumping.visible = false;
+			marioCrouched.visible = true;
+			mario = marioCrouched;
+		} else if (movement == 0) {
+			marioNormal.visible = !jumping;
+			marioWalking.visible = false;
+			marioRunning.visible = false;
+			marioCrouched.visible = false;
+			marioJumping.visible = jumping;
+			marioJumpingFast.visible = false;
+			mario = jumping ? marioJumping : marioNormal;
 		} else {
 			marioNormal.visible = false;
 			marioWalking.visible = marioSpeed == walk;
 			marioRunning.visible = marioSpeed == run;
-			mario = marioSpeed == run ? marioRunning : marioWalking;
+			marioCrouched.visible = false;
+			marioJumping.visible = false;
+			marioJumpingFast.visible = false;
+			var running = marioSpeed == run;
+			mario = (running) ? marioRunning : marioWalking;
 		}
+		
+		
 		
 		var lastXpos = xpos;
 		xpos = Math.min(floorTop.width - mario.width - 10, Math.max(10, xpos + movement * marioSpeed)); 
-		
-		if (lastXpos == xpos) {
-			return;
-		}
 		
 		var hm = mario.width / 2; 
 		if (controller.lb) {
@@ -213,7 +248,6 @@ class PlatformPOC extends Sprite {
 		
 		front.x = Std.int(floorBottom.x / 1.5);
 		
-		
 		if (lastXpos != xpos) { // TODO test on dpad or keyboard
 			if (lastXpos - xpos > 0) {
 				mario.mirror = 1;
@@ -222,10 +256,53 @@ class PlatformPOC extends Sprite {
 			}
 		}
 		
+		var limit = 200;
+		var marioY = floorMarioY;
+		var jumpInc:Float = 3.5;
+		
+		//60*(4*sqrt(x)/sqrt(200+x))
+		//200*(1*sqrt(x)/sqrt(200+x))
+		function func(x:Float):Float {
+			//return 200 * (1 * Math.sqrt(x) / Math.sqrt(200 + x));
+			return x;
+		}
+		
+		jumping = !endingJump && controller.a;
+		endingJump = endingJump || !controller.a;
+		
+		if (jumping && !endingJump && !releasedA) {
+			if (jumpY >= limit) {
+				endingJump = true;
+				jumping = false;
+			} 
+			if (!(jumpY >= limit) && (!endingJump)) {
+				jumpY += jumpInc;
+			}
+		} 
+		
+		if (endingJump || (!jumping)) {
+			if (jumpY + marioY > floorMarioY) {
+				jumpY -= jumpInc * 1.5;
+			}
+			if (jumpY <= 0) {
+				endingJump = false;
+				jumpY = 0;
+				releasedA = controller.a;
+			}
+		}
+		
+		marioY = floorMarioY - func(jumpY);
+		mario.y = marioY;
+		
 		
 		marioLayer.render();
 		objectsLayer.render();
 		backgroundsLayer.render();
 		
 	}
+	
+	var releasedA = false;
+	var endingJump:Bool;
+	var jumping:Bool;
+	var jumpY:Float = 0;
 }
