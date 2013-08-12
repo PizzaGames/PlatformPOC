@@ -45,7 +45,7 @@ class PlatformPOC extends Sprite {
 	var floorBottom :RepeatedTileGroup;
 	var front:RepeatedTileGroup;
 	
-	var parallaxBackgrounds:List<TileGroup>;
+	var parallaxBackgrounds:List<RepeatedTileGroup>;
 	
 	var initialMarioPos:Int = 30;
 	
@@ -72,33 +72,35 @@ class PlatformPOC extends Sprite {
 		
 		backgroundsSheetData = Assets.getText("Assets/sprites/backgrounds.xml");
 		var backgroundsSheet:SparrowTilesheet = new SparrowTilesheet(Assets.getBitmapData("Assets/sprites/backgrounds.png"), backgroundsSheetData);
-		backgroundsLayer = new TileLayer(stage, backgroundsSheet);
+		backgroundsLayer = new TileLayer(backgroundsSheet);
 		addChild(backgroundsLayer.view);
 		
 		marioSheetData = Assets.getText("Assets/sprites/mario.xml");
 		var tileSheetMario:SparrowTilesheet = new SparrowTilesheet(Assets.getBitmapData("Assets/sprites/mario.png"), marioSheetData);
-		marioLayer = new TileLayer(stage, tileSheetMario);
+		marioLayer = new TileLayer(tileSheetMario);
 		addChild(marioLayer.view);
 		
 		objectsSheetData = Assets.getText("Assets/sprites/objects.xml");
 		var objectsSheet:SparrowTilesheet = new SparrowTilesheet(Assets.getBitmapData("Assets/sprites/objects.png"), objectsSheetData);
-		objectsLayer = new TileLayer(stage, objectsSheet);
+		objectsLayer = new TileLayer(objectsSheet);
 		addChild(objectsLayer.view);
 		
-		var sky1 = new RepeatedTileGroup(backgroundsLayer, "sky_01", 50, 1);
+		var repeatX = 200;
+		
+		var sky1 = new RepeatedTileGroup(backgroundsLayer, "sky_01", repeatX, 1, stageWidth, stageHeight);
 		sky1.x = 0;
 		sky1.y = 0;
 		backgroundsLayer.addChild(sky1);
 		
-		var sky2 = new RepeatedTileGroup(backgroundsLayer, "sky_02", 50, 150);
+		var sky2 = new RepeatedTileGroup(backgroundsLayer, "sky_02", repeatX, 40, stageWidth, stageHeight);
 		sky2.x = 0;
 		sky2.y = sky1.y + sky1.height;
 		backgroundsLayer.addChild(sky2);
 		
-		parallaxBackgrounds = new List<TileGroup>();
+		parallaxBackgrounds = new List<RepeatedTileGroup>();
 		
 		function getBackground(layer:TileLayer, tileName:String, xRepeat:Int, yRepeat:Int, x:Int, y:Int):RepeatedTileGroup {
-			var bg = new RepeatedTileGroup(backgroundsLayer, tileName, xRepeat, yRepeat);
+			var bg = new RepeatedTileGroup(backgroundsLayer, tileName, xRepeat, yRepeat, stageWidth, stageHeight);
 			bg.x = x;
 			if (y != 0) {
 				bg.y = y - bg.height;
@@ -107,22 +109,24 @@ class PlatformPOC extends Sprite {
 			return bg;
 		}
 		
-		floorTop = new RepeatedTileGroup(objectsLayer, "floor", 100, 1);
+		floorTop = new RepeatedTileGroup(objectsLayer, "floor", repeatX, 1, stageWidth, stageHeight);
 		objectsLayer.addChild(floorTop);
 		
-		floorBottom = new RepeatedTileGroup(objectsLayer, "floor2", 100, 1);
+		floorBottom = new RepeatedTileGroup(objectsLayer, "floor2", repeatX, 1, stageWidth, stageHeight);
 		objectsLayer.addChild(floorBottom);
 		
-		front = getBackground(objectsLayer, "backgrounds_65", 30, 1, 0, 0);
+		
+		front = getBackground(objectsLayer, "backgrounds_65", repeatX, 1, 0, 0);
 		front.y = stage.stageHeight - front.height;
 		
 		floorTop.y = stage.stageHeight - floorBottom.height - floorTop.height;
 		floorBottom.y = floorTop.y + floorTop.height;
 		
-		parallaxBackgrounds.add(getBackground(backgroundsLayer, "clouds", 30, 1, 0, 0));
-		parallaxBackgrounds.add(getBackground(backgroundsLayer, "backgrounds_59", 30, 1, 0, Std.int(floorTop.y - 50)));
-		parallaxBackgrounds.add(getBackground(backgroundsLayer, "backgrounds_57", 30, 1, 0, Std.int(floorTop.y - 40)));
-		parallaxBackgrounds.add(getBackground(backgroundsLayer, "backgrounds_43", 30, 1, 0, Std.int(floorTop.y + 80)));
+		parallaxBackgrounds.add(getBackground(backgroundsLayer, "clouds", repeatX, 1, 0, 0));
+		parallaxBackgrounds.add(getBackground(backgroundsLayer, "backgrounds_59", repeatX, 1, 0, Std.int(floorTop.y - 50)));
+		parallaxBackgrounds.add(getBackground(backgroundsLayer, "backgrounds_57", repeatX, 1, 0, Std.int(floorTop.y - 40)));
+		parallaxBackgrounds.add(getBackground(backgroundsLayer, "backgrounds_43", repeatX, 1, 0, Std.int(floorTop.y + 80)));
+		
 		
 		marioWalking = new TileClip(marioLayer, "mario_walk");
 		marioWalking.x = initialMarioPos;
@@ -173,8 +177,11 @@ class PlatformPOC extends Sprite {
 		var lastXpos = xpos;
 		xpos = Math.min(floorTop.width - mario.width - 10, Math.max(10, xpos + movement * marioSpeed)); 
 		
-		var hm = mario.width / 2; 
+		if (lastXpos == xpos) {
+			return;
+		}
 		
+		var hm = mario.width / 2; 
 		if (controller.lb) {
 			mario.x = initialMarioPos;
 			floorTop.x = 0;
@@ -198,22 +205,23 @@ class PlatformPOC extends Sprite {
 		}
 		
 		var i = 0;
+		
 		for (bg in parallaxBackgrounds) {
 			i++;
-			bg.x = floorBottom.x;//Std.int(floorBottom.x * (i / 6));
+			bg.x = Std.int(floorBottom.x * (i / 6));
 		}
 		
 		front.x = Std.int(floorBottom.x / 1.5);
 		
-		/*
+		
 		if (lastXpos != xpos) { // TODO test on dpad or keyboard
 			if (lastXpos - xpos > 0) {
-				mario.scaleX = -1;
+				mario.mirror = 1;
 			} else if (lastXpos - xpos < 0) {
-				mario.scaleX = 1;
+				mario.mirror = 0;
 			}
 		}
-		*/
+		
 		
 		marioLayer.render();
 		objectsLayer.render();

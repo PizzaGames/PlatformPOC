@@ -4,23 +4,23 @@
 	<meta title="PlatformPOC" package="br.com.wolfteam.pocs.platformpoc" version="1.0.0" company="Wolf Team" />
 	<app main="PlatformPOC" path="Export" file="PlatformPOC" />
 	<window fps="60" if="android" />
-	<window fps="60" resizable="false" fullscreen="false" width="1280" height="700" unless="android" hardware="true" />
+	<!--window fps="60" resizable="false" fullscreen="false" width="1280" height="700" unless="android" hardware="true" /-->
+	<window fps="100" resizable="false" fullscreen="false" width="1800" height="800" unless="android" hardware="true" />
 	
 	<source path="Source" />
 	
-	<haxelib name="openfl-ouya"/>
-	<haxelib name="openfl-xinput" unless="android" />
 	<haxelib name="openfl" />
+	<haxelib name="openfl-ouya" if="android" />
+	<haxelib name="openfl-xinput" if="windows" />
+	<haxelib name="openfl-tilelayer" />
 
 	<haxelib name="swf" />
-	<haxelib name="tilelayer" />
 	
 	<library path="Source/library.swf" />
 	
 	<ndll name="std" />
 	<ndll name="regexp" />
 	<ndll name="zlib" />
-	
 	
 	<assets path="Assets" rename="Assets" exclude="nme.svg" include="*" />
 	<icon path="Assets/nme.svg" />
